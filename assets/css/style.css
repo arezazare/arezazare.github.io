@@ -410,6 +410,12 @@ section {
 # About
 --------------------------------------------------------------*/
 
+.no-bullets {
+  list-style: none;  /* Removes default bullet points */
+  padding-left: 0;   /* Optional: remove default indentation */
+  margin-left: 0;    /* Optional: remove margin */
+}
+
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -442,8 +448,11 @@ section {
   margin-bottom: 0;
 }
 
+/* Image fixes */
 .about-img {
   width: 100%;
+  height: auto;         /* maintain natural height */
+  max-width: 100%;      /* prevent overflow */
   object-fit: cover;
   border-radius: 10px;
 }
@@ -454,7 +463,14 @@ section {
   }
 
   .about-img {
-    height: 100%;
+    height: auto;        /* prevent stretching */
+    max-height: 500px;   /* optional limit */
+  }
+
+  .about .col-lg-4 {
+    display: flex;
+    align-items: center; /* vertically center image */
+    justify-content: center; /* optional horizontal centering */
   }
 }
 
@@ -465,7 +481,6 @@ section {
   display: inline-block;
   margin-right: 8px;
 }
-
 
 /*--------------------------------------------------------------
 # Resume
